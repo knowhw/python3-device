@@ -2,9 +2,9 @@ from device import attrib
 from device import *
 # from threading import Thread
 import asyncio # https://docs.python.org/3/library/asyncio.html
+import json
 device_list=module.collections.dictionary
 """ device list """
-
 
 
 
@@ -92,8 +92,13 @@ def devices():
 			device_list [disk]["mounted"] = state
 			
 	return device_list
-
-
+def test():
+	return devices()
+class device:
+	def export(devices, path):
+		data = json.dumps(devices, indent=4)
+		with open(path, "w") as f : 
+			f.write(data)
 
 
 
