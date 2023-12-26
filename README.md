@@ -15,6 +15,26 @@ git clone https://github.com/knowhw/python3-device.git
 sudo cp -R python3-device/device /usr/local/lib/python3.10
 ~~~
 
+
+## export to device list
+~~~
+{
+    "sda1": {
+        "fstype": "vfat",
+        "label": null,
+        "uuid": "4A35-C66D",
+        "mountpoint": "/media/linux/4A35-C66D",
+        "mounted": false
+    },
+    "mmcblk1p1": {
+        "fstype": "vfat",
+        "label": null,
+        "uuid": "6335-3364",
+        "mountpoint": "/media/linux/6335-3364",
+        "mounted": false
+    }
+}
+~~~
 ## Library usage
 ~~~python
 from device import lsblk
@@ -23,9 +43,6 @@ lsblk.popen("lsblk -fs")
 devices = lsblk.devices()
 
 ~~~
-
-
-
 
 
 
