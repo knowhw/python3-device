@@ -16,7 +16,7 @@ sudo cp -R python3-device/device /usr/local/lib/python3.10
 ~~~
 
 
-## export to device list
+## How to Export Device List.
 ~~~
 {
     "sda1": {
