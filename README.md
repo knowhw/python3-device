@@ -16,7 +16,23 @@ sudo cp -R python3-device/device /usr/local/lib/python3.10
 ~~~
 
 
-## How to Export Device List.
+
+## Library usage
+~~~python
+from device import lsblk
+
+lsblk.popen("lsblk -fs")
+devices = lsblk.devices()
+
+~~~
+
+## Library usage
+~~~python
+devices = lsblk.devices()
+lsblk.device.export(devices, "/home/linux/devices.json")
+~~~
+
+## devices.json
 ~~~
 {
     "sda1": {
@@ -35,16 +51,6 @@ sudo cp -R python3-device/device /usr/local/lib/python3.10
     }
 }
 ~~~
-## Library usage
-~~~python
-from device import lsblk
-
-lsblk.popen("lsblk -fs")
-devices = lsblk.devices()
-
-~~~
-
-
 
 
 
