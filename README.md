@@ -26,7 +26,7 @@ devices = lsblk.devices()
 
 ~~~
 
-## Library usage
+## How to Export Devices List 
 ~~~python
 devices = lsblk.devices()
 lsblk.device.export(devices, "/home/linux/devices.json")
