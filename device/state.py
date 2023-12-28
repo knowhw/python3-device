@@ -1,10 +1,10 @@
 from device import attrib
 from device import *
-# from threading import Thread
 # import asyncio # https://docs.python.org/3/library/asyncio.html
 import json
 device_list=module.collections.dictionary
 """ device list """
+
 
 
 
@@ -62,7 +62,7 @@ def devices():
  	plugged
  
 	"""
-	
+
 	
 	for item in module.loads(popen("lsblk --json --fs")). get(attrib.blockdevices.name) :
 		
@@ -86,8 +86,8 @@ def devices():
 			state = ismount.device(label=device_list [disk].get(attrib.label))
 			device_list [disk][attrib.plugged] = attrib.mounted not in device_list.get(disk)
 			device_list [disk][attrib.mounted] = state
-			
-			
+
+		
 			
 		else:
 			""" isim\etiket tanimlanmamis disk """
@@ -95,8 +95,6 @@ def devices():
 			device_list [disk][attrib.plugged] = attrib.mounted not in device_list.get(disk)
 			device_list [disk][attrib.mounted] = state
 	return device_list
-def test():
-	return devices()
 class device:
 	def export(devices, path):
 		data = json.dumps(devices, indent=4)
