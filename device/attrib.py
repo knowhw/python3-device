@@ -12,7 +12,7 @@ label="label"
 uuid="uuid"
 mountpoint="mountpoint"
 children="children"
-mounted="mounted
+mounted="mounted"
 
 class TYPE:
 	name="TYPE"
