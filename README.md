@@ -45,7 +45,7 @@ state.device.export(devices, "/home/linux/devices.json")
         "label": null,
         "uuid": "6335-3364",
         "mountpoint": "/media/linux/6335-3364",
-        "mounted": false
+        "mounted": true
     }
 }
 ~~~
