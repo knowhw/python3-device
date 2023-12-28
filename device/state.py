@@ -77,19 +77,24 @@ def devices():
 					name = item.get(attrib.name)
 					device_list [name] = item ; item.pop(attrib.name)
 	for disk in device_list:
+		plug = "mounted" not in device_list.get(disk)
+		\
 		
 		""" isim\etiket tanimlanmis disk """
 		if not device_list [disk] .get("label") == None:
+			
 			state = ismount.device(label=device_list [disk].get(attrib.label))
+			
 			device_list [disk]["mounted"] = state
-			
-			
+			device_list [disk]["plugged"] = plug
 			
 			
 		else:
 			""" isim\etiket tanimlanmamis disk """
 			state = ismount.device(uuid=device_list [disk].get(attrib.uuid))
+			
 			device_list [disk]["mounted"] = state
+			device_list [disk]["plugged"] = plug
 			
 	return device_list
 def test():
