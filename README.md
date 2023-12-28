@@ -19,17 +19,15 @@ sudo cp -R python3-device/device /usr/local/lib/python3.10
 
 ## Library usage
 ~~~python
-from device import lsblk
-
-lsblk.popen("lsblk -fs")
-devices = lsblk.devices()
+from device import state
+devices = state.devices()
 
 ~~~
 
 ## How to Export Devices List 
 ~~~python
-devices = lsblk.devices()
-lsblk.device.export(devices, "/home/linux/devices.json")
+devices = state.devices()
+state.device.export(devices, "/home/linux/devices.json")
 ~~~
 
 ## devices.json
