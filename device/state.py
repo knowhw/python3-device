@@ -58,7 +58,9 @@ def devices():
 	mountpoint  where the device is mounted
 	label  filesystem LABEL
 	uuid  filesystem UUID
-
+	mounted 
+ 	plugged
+ 
 	"""
 	
 	
