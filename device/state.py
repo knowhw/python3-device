@@ -1,7 +1,7 @@
 from device import attrib
 from device import *
 # from threading import Thread
-import asyncio # https://docs.python.org/3/library/asyncio.html
+# import asyncio # https://docs.python.org/3/library/asyncio.html
 import json
 device_list=module.collections.dictionary
 """ device list """
@@ -77,24 +77,22 @@ def devices():
 					name = item.get(attrib.name)
 					device_list [name] = item ; item.pop(attrib.name)
 	for disk in device_list:
-		plug = "mounted" not in device_list.get(disk)
-		\
 		
 		""" isim\etiket tanimlanmis disk """
 		if not device_list [disk] .get("label") == None:
 			
 			state = ismount.device(label=device_list [disk].get(attrib.label))
-			
+			device_list [disk]["plugged"] = "mounted" not in device_list.get(disk)
 			device_list [disk]["mounted"] = state
-			device_list [disk]["plugged"] = plug
+			
 			
 			
 		else:
 			""" isim\etiket tanimlanmamis disk """
 			state = ismount.device(uuid=device_list [disk].get(attrib.uuid))
-			
+			device_list [disk]["plugged"] = "mounted" not in device_list.get(disk)
 			device_list [disk]["mounted"] = state
-			device_list [disk]["plugged"] = plug
+
 			
 	return device_list
 def test():
