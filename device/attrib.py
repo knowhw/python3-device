@@ -1,18 +1,22 @@
 
 from device import module
 
+"""
 class key:
-	name,fstype,label,uuid,mountpoint="name","fstype","label","uuid","mountpoint";
-	children="children"
-	blockdevices="blockdevices"
-	host="host"
+name,fstype,label,uuid,mountpoint="name","fstype","label","uuid","mountpoint";
+children="children"
+blockdevices="blockdevices"
+host="host"
+"""
+
+mountpoint="mountpoint"
+children="children"
+mounted="mounted"
+plugged="plugged"
 name="name"
 fstype="fstype"
 label="label"
 uuid="uuid"
-mountpoint="mountpoint"
-children="children"
-mounted="mounted"
 
 class TYPE:
 	name="TYPE"
