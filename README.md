@@ -15,7 +15,7 @@ device library is a Open Source Python Library that lists USB devices mounted to
 <br/>
 
 ## Installation
-~~~
+~~~bash
 git clone https://github.com/knowhw/python3-device.git
 sudo cp -R python3-device/device /usr/local/lib/python3.10
 ~~~
