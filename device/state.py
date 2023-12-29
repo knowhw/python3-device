@@ -58,8 +58,6 @@ def devices():
 	mountpoint  where the device is mounted
 	label  filesystem LABEL
 	uuid  filesystem UUID
-	mounted 
- 	plugged
  
 	"""
 
@@ -82,17 +80,19 @@ def devices():
 		
 		""" isim\etiket tanimlanmis disk """
 		if not device_list [disk] .get("label") == None:
+
 			
 			state = ismount.device(label=device_list [disk].get(attrib.label))
 			device_list [disk][attrib.plugged] = attrib.mounted not in device_list.get(disk)
+			
 			device_list [disk][attrib.mounted] = state
 
 		
-			
 		else:
 			""" isim\etiket tanimlanmamis disk """
 			state = ismount.device(uuid=device_list [disk].get(attrib.uuid))
 			device_list [disk][attrib.plugged] = attrib.mounted not in device_list.get(disk)
+			
 			device_list [disk][attrib.mounted] = state
 	return device_list
 class device:
