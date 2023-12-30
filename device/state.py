@@ -109,8 +109,8 @@ def devices():
 			device_list .get(disk).update({ attrib.mountpoint: mountpoint })
 
 	return device_list
-def watch():
-	return module.watch.state.devices()
+# def watch():
+#	return module.watch.state.devices()
 class device:
 	def export(devices, path):
 		data = json.dumps(devices, indent=4)
