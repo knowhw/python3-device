@@ -28,7 +28,7 @@ from device import state
 devices = state.devices()
 
 ~~~
-## Mounted ALL Usb Disk to Directory 
+## How to Mounting ALL Usb Disk to System Directory. 
 ~~~python
 devices = state.devices()
 device.mount.all(devices)
