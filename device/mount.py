@@ -21,7 +21,7 @@ class test:
 				module.udisksctl('udisksctl mount -b %s' % path.join(module.path.dev, item))
 			
 			
-			return __class__.device()
+		return __class__.device()
 	# def mount(devices):
 	#	pass
 def all(devices): 
