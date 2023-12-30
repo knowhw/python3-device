@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-from device import state
-from device import *
 from os import * 
+from device import module, state
 
 
-class state:
+class test:
+	
 	@classmethod
 	def device(self):
 		return state.devices()
@@ -16,7 +16,6 @@ class state:
 		keys = module.collections.array(devices.keys())
 		
 		for item in keys:
-
 			module.udisksctl('udisksctl mount -b %s' % path.join(module.path.dev, item))
 			
 			return __class__.device()
@@ -25,5 +24,6 @@ class state:
 	#	pass
 def all(devices): 
 	""" # device.mount.all(devices) """
-	return state.all(devices)
+	return test.all(devices)
 	
+
