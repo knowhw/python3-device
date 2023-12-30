@@ -10,7 +10,7 @@
 <br/>
 
 # Device Python Library
-device library is a Open Source Python Library that lists USB devices mounted to your computer.
+device library is a Open Source Python Library that lists USB devices plugged to your computer.
 <br/>
 <br/>
 
