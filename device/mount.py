@@ -16,10 +16,12 @@ class test:
 		keys = module.collections.array(devices.keys())
 		
 		for item in keys:
-			module.udisksctl('udisksctl mount -b %s' % path.join(module.path.dev, item))
+			
+			if not state.ismount.device(uuid=devices[item] .get('uuid')):
+				module.udisksctl('udisksctl mount -b %s' % path.join(module.path.dev, item))
+			
 			
 			return __class__.device()
-			
 	# def mount(devices):
 	#	pass
 def all(devices): 
