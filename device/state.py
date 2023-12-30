@@ -24,7 +24,7 @@ def popen(argument):
 		return False
 """
 class ismount:
-	@classmethod
+	
 	def device(name=None, 
 uuid=None, label=None):
 	
@@ -50,6 +50,7 @@ uuid=None, label=None):
 		# if name is not None:
 		#	test = device_list[name].get(point)
 		#	if test == None: return False
+
 def devices():
 	"""
 	
@@ -108,6 +109,8 @@ def devices():
 			device_list .get(disk).update({ attrib.mountpoint: mountpoint })
 
 	return device_list
+def watch():
+	return module.watch.state.devices()
 class device:
 	def export(devices, path):
 		data = json.dumps(devices, indent=4)
