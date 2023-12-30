@@ -28,7 +28,12 @@ from device import state
 devices = state.devices()
 
 ~~~
-## How to Mounted Usb Disk to Directory 
+## Mounted ALL Usb Disk to Directory 
+~~~python
+devices = state.devices()
+device.mount.all(devices)
+~~~
+
 ## How to Export Devices List 
 ~~~python
 devices = state.devices()
