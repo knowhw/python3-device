@@ -6,11 +6,14 @@ from device import module, state
 
 
 class test:
-	__result=module.collections.array([])
+	__result=module.collections.array()
 	
 	@classmethod
 	def device(self):
 		return state.devices()
+	def hellousb(item):
+		module.udisksctl('udisksctl mount -b %s ' % path.join(module.path.dev, item))
+		
 	def all(devices):
 		
 		
@@ -23,15 +26,18 @@ class test:
 			
 			
 			uuid = label is None
-			if not uuid:
-				if state.ismount.device(uuid=devices[item]['uuid']):
-					push(item)
+			if uuid:
+				if not state.ismount.device(uuid=devices[item]['uuid']):
+					
+					push(path.join(module.path.mountpoint, devices[item]['uuid']))
 			else:
-				
-				if state.ismount.device(label=label):
-					push(item)
-			
-			module.udisksctl('udisksctl mount -b %s > /dev/null 2>&1' % path.join(module.path.dev, item))
+				if not state.ismount.device(label=label):
+					push(push(path.join(module.path.mountpoint, label)))
+					
+					
+					
+					
+			module.udisksctl('udisksctl mount -b %s > /dev/null 2>1&' % path.join(module.path.dev, item))
 		return __class__.__result
 	# def mount(devices):
 	#	pass
