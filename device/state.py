@@ -75,7 +75,8 @@ def devices():
 				if not item.get(attrib.mountpoint) == "/":
 					
 					name = item.get(attrib.name)
-					device_list [name] = item ; item.pop(attrib.name)
+					device_list [name] = item ; # item.pop(attrib.name)
+					device_list [name]['device'] = '/dev/%s' % name
 	for disk in device_list:
 		
 		""" isim\etiket tanimlanmis disk """
@@ -85,21 +86,35 @@ def devices():
 			state = ismount.device(label=device_list [disk].get(attrib.label))
 			device_list [disk][attrib.plugged] = attrib.mounted not in device_list.get(disk)
 			
-			device_list [disk][attrib.mounted] = state
+			device_list [disk].update({ attrib.mounted: state })
 
-		
+			label = device_list [disk].get(attrib.label)
+			
+			device_list [disk][attrib.mountpoint] = '%s/%s' % (module.path.mountpoint, label)
+			
+			
 		else:
 			""" isim\etiket tanimlanmamis disk """
 			state = ismount.device(uuid=device_list [disk].get(attrib.uuid))
+	
 			device_list [disk][attrib.plugged] = attrib.mounted not in device_list.get(disk)
-			
 			device_list [disk][attrib.mounted] = state
+			
+			uuid = device_list [disk].get(attrib.uuid)
+			mountpoint = '%s/%s' % (module.path.mountpoint, uuid)
+			
+			device_list .get(disk).update({ attrib.mountpoint: mountpoint })
 	return device_list
 class device:
 	def export(devices, path):
 		data = json.dumps(devices, indent=4)
 		with open(path, "w") as f : 
 			f.write(data)
+
+
+
+	
+
 
 
 
