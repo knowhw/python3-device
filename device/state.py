@@ -91,8 +91,9 @@ def devices():
 			label = device_list [disk].get(attrib.label)
 			
 			device_list [disk][attrib.mountpoint] = '%s/%s' % (module.path.mountpoint, label)
-			
-			
+
+
+		
 		else:
 			""" isim\etiket tanimlanmamis disk """
 			state = ismount.device(uuid=device_list [disk].get(attrib.uuid))
@@ -102,8 +103,10 @@ def devices():
 			
 			uuid = device_list [disk].get(attrib.uuid)
 			mountpoint = '%s/%s' % (module.path.mountpoint, uuid)
+
 			
 			device_list .get(disk).update({ attrib.mountpoint: mountpoint })
+
 	return device_list
 class device:
 	def export(devices, path):
