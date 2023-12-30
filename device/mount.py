@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from device import lsblk
+from device import state
 from device import *
 from os import * 
 
@@ -8,7 +8,7 @@ from os import *
 class state:
 	@classmethod
 	def device(self):
-		return lsblk.devices()
+		return state.devices()
 		
 	def all(devices):
 		
