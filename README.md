@@ -28,7 +28,7 @@ from device import state
 devices = state.devices()
 
 ~~~
-## How to Mount Usb Disk 
+## How to Mounted Usb Disk to pc 
 ## How to Export Devices List 
 ~~~python
 devices = state.devices()
