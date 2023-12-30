@@ -25,7 +25,7 @@ sudo cp -R python3-device/device /usr/local/lib/python3.10
 ## Library usage
 ~~~python
 from device import state
-
+# import device
 
 ~~~
 ## How to Mounting ALL Usb Disk to System Directory [/media]
