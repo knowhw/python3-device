@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-from os import path 
 from device import lsblk
 from device import *
+from os import * 
 
 
 class state:
