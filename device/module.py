@@ -1,6 +1,4 @@
 
-
-
 from os import popen
 from os import path as mountpoint
 from os import system as udisksctl
@@ -8,9 +6,6 @@ from os import system as udisksctl
 from os import getenv
 from json import dumps, loads
 
-
-
-# from device import attrib
 
 
 
