@@ -14,17 +14,18 @@ class path:
 	mountpoint=f"/media/{getenv('USER')}"
 	dev="/dev"
 
+
 class collections:
 	dictionary={}
 	array=list
 class keys:
 	NAME,FSTYPE,LABEL,UUID,MOUNTPOINT="NAME","FSTYPE","LABEL","UUID","MOUNTPOINT";
 
-class watch:
-	class state:
-		def devices():
-			for item in call(["dconf", "watch", "/"]):
-				yield item 
+# class watch:
+#	class state:
+#		def devices():
+#			for item in call([]):
+#				yield item 
 
 
 	
