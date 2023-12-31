@@ -105,12 +105,11 @@ def devices():
 			uuid = device_list [disk].get(attrib.uuid)
 			mountpoint = '%s/%s' % (module.path.mountpoint, uuid)
 
-			
-			device_list .get(disk).update({ attrib.mountpoint: mountpoint })
+			item = { attrib.mountpoint: mountpoint }
+			device_list .get(disk).update(item)
 
 	return device_list
-# def watch():
-#	return module.watch.state.devices()
+
 class device:
 	def export(devices, path):
 		data = json.dumps(devices, indent=4)
