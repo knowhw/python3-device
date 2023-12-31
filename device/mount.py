@@ -11,9 +11,7 @@ class test:
 	@classmethod
 	def device(self):
 		return state.devices()
-	def hellousb(item):
-		module.udisksctl('udisksctl mount -b %s ' % path.join(module.path.dev, item))
-		
+
 	def all(devices):
 		
 		
@@ -22,17 +20,16 @@ class test:
 		
 		for item in keys:
 			
-			label = devices[item] .get('label')
+			label = devices[item] .get(attrib.label)
 			
 			
-			uuid = label is None
-			if uuid:
-				if not state.ismount.device(uuid=devices[item]['uuid']):
+			if label is None:
+				if not state.ismount.device(uuid=devices[item][attrib.uuid]):
 					
-					push(path.join(module.path.mountpoint, devices[item]['uuid']))
+					push(path.join(module.path.mountpoint, devices[item][attrib.uuid]))
 			else:
 				if not state.ismount.device(label=label):
-					push(push(path.join(module.path.mountpoint, label)))
+					push(path.join(module.path.mountpoint, label))
 					
 					
 					
