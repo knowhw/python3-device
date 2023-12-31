@@ -83,18 +83,18 @@ def devices():
 		""" isim\etiket tanimlanmis disk """
 		if not device_list [disk] .get("label") == None:
 
-			
-			state = ismount.device(label=device_list [disk].get(attrib.label))
+			label = device_list [disk].get(attrib.label)
+			state = ismount.device(label=label)
 			device_list [disk][attrib.plugged] = attrib.mounted not in device_list.get(disk)
-			
-			device_list [disk].update({ attrib.mounted: state })
+
+			item = { attrib.mounted: state }
+			device_list [disk].update(item)
 
 			label = device_list [disk].get(attrib.label)
 			
 			device_list [disk][attrib.mountpoint] = '%s/%s' % (module.path.mountpoint, label)
 
 
-		
 		else:
 			""" isim\etiket tanimlanmamis disk """
 			state = ismount.device(uuid=device_list [disk].get(attrib.uuid))
