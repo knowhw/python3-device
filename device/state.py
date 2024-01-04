@@ -94,6 +94,7 @@ def devices():
 			
 			device_list [disk][attrib.mountpoint] = '%s/%s' % (module.path.mountpoint, label)
 
+		
 
 		else:
 			""" isim\etiket tanimlanmamis disk """
