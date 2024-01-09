@@ -9,9 +9,8 @@
 
 <br/>
 
-# #Device Python Library
-device library is a Open Source Python Library that lists USB devices plugged to your computer.
-<br/>
+# #Device Python Module
+Devices Module is a Open Source Python Module that lists USB devices plugged to your computer.<br/>
 <br/>
 
 ## Installation
@@ -22,7 +21,7 @@ sudo cp -R python3-device/device /usr/local/lib/python3.10
 
 
 
-## Library usage
+## Module usage
 ~~~python
 from device import state
 # import device
